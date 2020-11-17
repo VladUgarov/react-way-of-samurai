@@ -6,12 +6,12 @@ const NavBar = () => {
   return (
     <nav className={classes.nav}>
       <div className={classes.item}>
-        <NavLink to="profile" activeClassName={classes.activeLink}>
+        <NavLink to="/profile" activeClassName={classes.activeLink}>
           Profile
         </NavLink>
       </div>
       <div className={classes.item}>
-        <NavLink to="dialogs" activeClassName={classes.activeLink}>
+        <NavLink to="/dialogs" activeClassName={classes.activeLink}>
           Messages
         </NavLink>
       </div>
