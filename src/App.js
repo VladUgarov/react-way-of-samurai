@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Profile from "./components/Profile/Profile";
@@ -23,7 +23,13 @@ const App = (props) => {
         />
         <Route
           path="/profile"
-          render={() => <Profile posts={props.state.profilePage.posts} />}
+          render={() => (
+            <Profile
+              profilePage={props.state.profilePage}
+              addPost={props.addPost}
+              updateNewPostText={props.updateNewPostText}
+            />
+          )}
         />
       </div>
     </div>
