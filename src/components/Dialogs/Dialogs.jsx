@@ -16,15 +16,15 @@ const Dialogs = (props) => {
     <Message message={m.message} />
   ));
 
-  let newMwssageBody = props.newMwssageBody;
+  let newMessageBody = props.newMessageBody;
 
   let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator());
+    props.dispatch(sendMessageCreator());
   };
 
   let onNewMessageChange = (e) => {
     let body = e.target.value;
-    props.store.dispatch(updateNewMessageBodyCreator(body));
+    props.dispatch(updateNewMessageBodyCreator(body));
   };
 
   return (
@@ -34,7 +34,7 @@ const Dialogs = (props) => {
         <div>{messagesElements}</div>
         <div>
           <textarea
-            value={newMwssageBody}
+            value={newMessageBody}
             onChange={onNewMessageChange}
             placeholder="Enter your message"
           ></textarea>
