@@ -4,19 +4,21 @@ import {
   follow,
   setCurrentPage,
   unfollow,
-  toggleFollowingProgress
+  toggleFollowingProgress,
+  requestUsers
 } from "../../redux/users-reducer";
 import Users from "./Users";
 import Preloader from "../Common/Preloader/Preloader";
 import { compose } from "redux";
+
 import {
-  getUsers,
+  getCurrentPage,
+  getFollowingInProgress,
+  getIsFetching,
   getPageSize,
   getTotalUsersCount,
-  getCurrentPage,
-  getIsFetching,
-  getFollowingInProgress
-} from "..//..//redux//users-selectors";
+  getUsers
+} from "../../redux/users-selectors";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -46,7 +48,6 @@ class UsersContainer extends React.Component {
     );
   }
 }
-
 let mapStateToProps = (state) => {
   return {
     users: getUsers(state),
@@ -64,6 +65,6 @@ export default compose(
     unfollow,
     setCurrentPage,
     toggleFollowingProgress,
-    getUsers
+    getUsers: requestUsers
   })
 )(UsersContainer);
