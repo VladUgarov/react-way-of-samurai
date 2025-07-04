@@ -59,7 +59,7 @@ let AppContainer = compose(
   connect(mapStateToProps, { initializeApp })
 )(App);
 
-let SamuraiJsApp = (props) => {
+const SamuraiJsApp = (props) => {
   return (
     <BrowserRouter>
       <Provider store={store}>
