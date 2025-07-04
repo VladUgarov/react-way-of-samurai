@@ -69,4 +69,4 @@ const SamuraiJsApp = (props) => {
   );
 };
 
-export default SamuraiJsAp;
+export default SamuraiJsApp;
