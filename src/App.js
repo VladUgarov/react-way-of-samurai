@@ -54,7 +54,7 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 });
 
-const AppContainer = compose(
+let AppContainer = compose(
   withRouter,
   connect(mapStateToProps, { initializeApp })
 )(App);
